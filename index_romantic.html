@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choices Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .step {
+      display: none;
+    }
+    .step.active {
+      display: block;
+      text-align: center;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #d63384;
+    }
+    .note {
+      font-size: 18px;
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .options label {
+      display: block;
+    }
+    .options input {
+      display: none;
+    }
+    .options button {
+      width: 100%;
+      padding: 12px;
+      background: #f0f0f0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .options button:hover {
+      background: #007BFF;
+      color: #fff;
+      border-color: #007BFF;
+    }
+    .nav-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <form id="choicesForm" action="https://formspree.io/f/manpnrqq" method="POST">
+      
+      <!-- Welcome Page -->
+      <div class="step active">
+        <h1>Hey Queen Ruth 💖</h1>
+        <p class="note">You’re so special to me, and I just want to share this little journey with you.<br>Let’s create memories ✨</p>
+        <button type="button" class="nav-btn" onclick="nextStep()">Start</button>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="step">
+        <h2>Venue</h2>
+        <div class="options">
+          <label><input type="radio" name="Venue" value="Lodge" required><button type="button" onclick="selectOption(this)">Lodge</button></label>
+          <label><input type="radio" name="Venue" value="My Place"><button type="button" onclick="selectOption(this)">My Place</button></label>
+        </div>
+        <button type="button" class="nav-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step">
+        <h2>Time</h2>
+        <div class="options">
+          <label><input type="radio" name="Time" value="Night" required><button type="button" onclick="selectOption(this)">Night</button></label>
+          <label><input type="radio" name="Time" value="Day"><button type="button" onclick="selectOption(this)">Day</button></label>
+        </div>
+        <button type="button" class="nav-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step">
+        <h2>Dinner Options</h2>
+        <div class="options">
+          <label><input type="radio" name="Dinner" value="Rice" required><button type="button" onclick="selectOption(this)">Rice</button></label>
+          <label><input type="radio" name="Dinner" value="Soup"><button type="button" onclick="selectOption(this)">Soup</button></label>
+          <label><input type="radio" name="Dinner" value="Spaghetti"><button type="button" onclick="selectOption(this)">Spaghetti</button></label>
+        </div>
+        <button type="button" class="nav-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step">
+        <h2>Protein Options</h2>
+        <div class="options">
+          <label><input type="radio" name="Protein" value="Beef" required><button type="button" onclick="selectOption(this)">Beef</button></label>
+          <label><input type="radio" name="Protein" value="Chicken"><button type="button" onclick="selectOption(this)">Chicken</button></label>
+          <label><input type="radio" name="Protein" value="Fish"><button type="button" onclick="selectOption(this)">Fish</button></label>
+        </div>
+        <button type="button" class="nav-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step">
+        <h2>Drink</h2>
+        <div class="options">
+          <label><input type="radio" name="Drink" value="Coca-Cola" required><button type="button" onclick="selectOption(this)">Coca-Cola</button></label>
+          <label><input type="radio" name="Drink" value="Water"><button type="button" onclick="selectOption(this)">Water</button></label>
+          <label><input type="radio" name="Drink" value="Both"><button type="button" onclick="selectOption(this)">Both</button></label>
+        </div>
+        <button type="button" class="nav-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="step">
+        <h2>Fruits</h2>
+        <div class="options">
+          <label><input type="radio" name="Fruit" value="Banana" required><button type="button" onclick="selectOption(this)">Banana</button></label>
+          <label><input type="radio" name="Fruit" value="Orange"><button type="button" onclick="selectOption(this)">Orange</button></label>
+          <label><input type="radio" name="Fruit" value="Watermelon"><button type="button" onclick="selectOption(this)">Watermelon</button></label>
+        </div>
+        <button type="button" class="nav-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="step">
+        <h2>Cruise</h2>
+        <div class="options">
+          <label><input type="radio" name="Cruise" value="Weed" required><button type="button" onclick="selectOption(this)">Weed</button></label>
+          <label><input type="radio" name="Cruise" value="Alcohol"><button type="button" onclick="selectOption(this)">Alcohol</button></label>
+          <label><input type="radio" name="Cruise" value="Both"><button type="button" onclick="selectOption(this)">Both</button></label>
+        </div>
+        <button type="button" class="nav-btn" onclick="nextStep()">Next</button>
+      </div>
+
+      <!-- Step 8 -->
+      <div class="step">
+        <h2>For Fun</h2>
+        <div class="options">
+          <label><input type="radio" name="Fun" value="Movie" required><button type="button" onclick="selectOption(this)">Movie</button></label>
+          <label><input type="radio" name="Fun" value="Card Games"><button type="button" onclick="selectOption(this)">Card Games</button></label>
+        </div>
+        <button type="submit" class="nav-btn">Submit</button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    let currentStep = 0;
+    const steps = document.querySelectorAll('.step');
+
+    function nextStep() {
+      steps[currentStep].classList.remove('active');
+      currentStep++;
+      if (currentStep < steps.length) {
+        steps[currentStep].classList.add('active');
+      }
+    }
+
+    function selectOption(button) {
+      const input = button.parentElement.querySelector('input');
+      input.checked = true;
+    }
+  </script>
+</body>
+</html>
